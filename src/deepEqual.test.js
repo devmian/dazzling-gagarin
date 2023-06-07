@@ -14,6 +14,14 @@ describe("deepEqual", () => {
     expect(deepEqual(undefined, null)).to.equal(false);
   });
 
+  it("should return false given object, null", () => {
+    expect(deepEqual({}, null)).to.equal(false);
+  });
+
+  it("should return false given object, undefined", () => {
+    expect(deepEqual({}, undefined)).to.equal(false);
+  });
+
   it("should return true given two value equal objects with undefined", () => {
     expect(
       deepEqual({ name: "Bob", email: undefined }, { name: "Bob" })
@@ -36,6 +44,15 @@ describe("deepEqual", () => {
     expect(deepEqual({ name: "Bob", email: "dev@gmail.com" }, null)).to.equal(
       false
     );
+  });
+
+  it("should return true given two value object", () => {
+    expect(
+      deepEqual(
+        { name: "Bob", canEdit: false, id: 222 },
+        { name: "Bob", canEdit: false, id: 222 }
+      )
+    ).to.equal(true);
   });
 
   it("should return false given two value different objects with undefined", () => {
