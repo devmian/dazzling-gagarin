@@ -52,4 +52,10 @@ describe("deepEqual", () => {
       deepEqual({ name: "Bob", email: null }, { name: "Bob", email: null })
     ).to.equal(true);
   });
+
+  it("should return true given two value different objects with null and undefined", () => {
+    expect(
+      deepEqual({ name: "Bob", email: null }, { name: "Bob", email: undefined })
+    ).to.equal(false);
+  });
 });
