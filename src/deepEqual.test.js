@@ -46,7 +46,7 @@ describe("deepEqual", () => {
     );
   });
 
-  it("should return true given two value object", () => {
+  it("should return true given two equal value object", () => {
     expect(
       deepEqual(
         { name: "Bob", canEdit: false, id: 222 },
