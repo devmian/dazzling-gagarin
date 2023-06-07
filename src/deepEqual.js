@@ -23,6 +23,8 @@ const deepEqual = (a, b) => {
 };
 
 const compareTwoObject = (a, b) =>
-  Object.keys(a).every((k) => (a[k] === undefined ? true : a[k] === b[k]));
+  Object.keys(a).every((k) =>
+    a[k] === undefined && b[k] === undefined ? true : a[k] === b[k]
+  );
 
 module.exports = deepEqual;
